@@ -1,0 +1,12 @@
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\obj\Debug\netcoreapp3.1\EFDataAccessLibrary.csprojAssemblyReference.cache
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\obj\Debug\netcoreapp3.1\EFDataAccessLibrary.AssemblyInfoInputs.cache
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\obj\Debug\netcoreapp3.1\EFDataAccessLibrary.AssemblyInfo.cs
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\obj\Debug\netcoreapp3.1\EFDataAccessLibrary.csproj.CoreCompileInputs.cache
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\bin\Debug\netcoreapp3.1\EFDataAccessLibrary.deps.json
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\bin\Debug\netcoreapp3.1\EFDataAccessLibrary.runtimeconfig.json
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\bin\Debug\netcoreapp3.1\EFDataAccessLibrary.runtimeconfig.dev.json
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\bin\Debug\netcoreapp3.1\EFDataAccessLibrary.dll
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\bin\Debug\netcoreapp3.1\EFDataAccessLibrary.pdb
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\obj\Debug\netcoreapp3.1\EFDataAccessLibrary.dll
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\obj\Debug\netcoreapp3.1\EFDataAccessLibrary.pdb
+C:\Users\mihai\Source\repos\PetWebApplication\EFAccessDataLibrary\obj\Debug\netcoreapp3.1\EFDataAccessLibrary.genruntimeconfig.cache
