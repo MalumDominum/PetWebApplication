@@ -1,37 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using PetWebProject;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
 namespace EFDataAccessLibrary.Models
 {
-    public partial class User
+    public class User
     {
-        public User()
-        {
-            MessageUserRecivers = new HashSet<Message>();
-            MessageUserSenders = new HashSet<Message>();
-            Pets = new HashSet<Pet>();
-            UserAddresses = new HashSet<UserAddress>();
-        }
-
-        public int UserId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public char? Gender { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
+        [Key] internal int UserId { get; }
+        [Required] public string FirstName { get; set; }
+        [Required] public string LastName { get; set; }
+        [Required] public char Gender { get; set; }
+        [Required] internal string Password { get; set; }
+        [Required] [DataType(DataType.EmailAddress)] public string Email { get; }
         public string PhoneNumber { get; set; }
-        public DateTime? BirthDate { get; set; }
-        public int? AddressId { get; set; }
+        [Required] public DateTime BirthDate { get; set; }
         public string PhotoPath { get; set; }
-        public DateTime? CreatedAt { get; set; }
+        [Required] public DateTime CreatedAt { get; set; }
         public DateTime? LastUpdatedAt { get; set; }
 
-        public virtual ICollection<Message> MessageUserRecivers { get; set; }
-        public virtual ICollection<Message> MessageUserSenders { get; set; }
-        public virtual ICollection<Pet> Pets { get; set; }
-        public virtual ICollection<UserAddress> UserAddresses { get; set; }
+        internal int AddressId { get; }
+
+        public List<Message> ReceivedMessages { get; set; } = new List<Message>();
+        public List<Message> SentMessages { get; set; } = new List<Message>();
+        public List<Pet> Pets { get; private set; }
+        [Required] public List<Address> Addresses { get; set; } = new List<Address>();
     }
 }

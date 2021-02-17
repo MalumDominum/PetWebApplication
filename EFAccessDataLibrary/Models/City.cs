@@ -1,23 +1,21 @@
 ﻿using System.Collections.Generic;
-using PetWebProject;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 #nullable disable
 
 namespace EFDataAccessLibrary.Models
 {
-    public partial class City
+    public class City
     {
-        public City()
-        {
-            Addresses = new HashSet<Address>();
-        }
-
-        public int CityId { get; set; }
-        public string CityName { get; set; }
+        [Key] internal int CityId { get; }
+        [Required] public string CityName { get; set; }
         public string Region { get; set; }
-        public int? CountryId { get; set; }
 
-        public virtual Country Country { get; set; }
-        public virtual ICollection<Address> Addresses { get; set; }
+        internal int CountryId { get; }
+
+        [Required] public Country Country { get; set; }
+        public List<Address> Addresses { get; set; } = new List<Address>();
     }
 }

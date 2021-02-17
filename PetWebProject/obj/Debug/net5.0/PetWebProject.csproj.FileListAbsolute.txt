@@ -47,3 +47,5 @@ C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\obj\Debug\net5.0\Pet
 C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\obj\Debug\net5.0\ref\PetWebProject.dll
 C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\obj\Debug\net5.0\PetWebProject.pdb
 C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\obj\Debug\net5.0\PetWebProject.genruntimeconfig.cache
+C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\bin\Debug\net5.0\Humanizer.dll
+C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll

@@ -1,19 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
 namespace EFDataAccessLibrary.Models
 {
-    public partial class Country
+    public class Country
     {
-        public Country()
-        {
-            Cities = new HashSet<City>();
-        }
+        [Key] internal int CountryId { get; }
+        [Required] public string CountryName { get; set; }
 
-        public int CountryId { get; set; }
-        public string CountryName { get; set; }
-
-        public virtual ICollection<City> Cities { get; set; }
+        public virtual List<City> Cities { get; set; } = new List<City>();
     }
 }

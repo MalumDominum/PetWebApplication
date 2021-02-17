@@ -1,14 +1,15 @@
 ﻿using EFDataAccessLibrary.Models;
 using Microsoft.EntityFrameworkCore;
-using PetWebProject;
-
-#nullable disable
 
 namespace EFDataAccessLibrary
 {
     public class PetContext : DbContext
     {
-        public PetContext() { }
+        public PetContext()
+        {
+            Database.EnsureDeleted();
+            Database.EnsureCreated();
+        }
 
         public PetContext(DbContextOptions options) : base(options) { }
 
@@ -19,10 +20,8 @@ namespace EFDataAccessLibrary
         public virtual DbSet<Message> Messages { get; set; }
         public virtual DbSet<Pet> Pets { get; set; }
         public virtual DbSet<PetPhoto> PetPhotos { get; set; }
-        public virtual DbSet<PetsState> PetsStates { get; set; }
-        public virtual DbSet<State> States { get; set; }
+        public virtual DbSet<Status> States { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<UserAddress> UserAddresses { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
 
@@ -54,6 +53,10 @@ namespace EFDataAccessLibrary
                     .WithMany(p => p.Addresses)
                     .HasForeignKey(d => d.CityId)
                     .HasConstraintName("addresses_city_id_fkey");
+
+                entity.HasMany(a => a.Users)
+                    .WithMany(u => u.Addresses)
+                    .UsingEntity(j => j.ToTable("user_address"));
             });
 
             modelBuilder.Entity<City>(entity =>
@@ -84,21 +87,21 @@ namespace EFDataAccessLibrary
 
                 entity.Property(e => e.CommentId).HasColumnName("comment_id");
 
-                entity.Property(e => e.AnswerOn).HasColumnName("answer_on");
+                entity.Property(e => e.AnswerOnId).HasColumnName("answer_on");
 
                 entity.Property(e => e.Content)
                     .HasColumnType("character varying")
                     .HasColumnName("content");
 
-                entity.Property(e => e.MemberId).HasColumnName("member_id");
+                entity.Property(e => e.AuthorId).HasColumnName("user_id");
 
                 entity.Property(e => e.PetId).HasColumnName("pet_id");
 
                 entity.Property(e => e.PostDate).HasColumnName("post_date");
 
-                entity.HasOne(d => d.AnswerOnNavigation)
-                    .WithMany(p => p.InverseAnswerOnNavigation)
-                    .HasForeignKey(d => d.AnswerOn)
+                entity.HasOne(d => d.AnswerOn)
+                    .WithMany(p => p.Answers)
+                    .HasForeignKey(d => d.AnswerOnId)
                     .HasConstraintName("comments_answer_on_fkey");
 
                 entity.HasOne(d => d.Pet)
@@ -134,17 +137,17 @@ namespace EFDataAccessLibrary
 
                 entity.Property(e => e.LastUpdateAt).HasColumnName("last_update_at");
 
-                entity.Property(e => e.UserReciverId).HasColumnName("user_reciver_id");
+                entity.Property(e => e.UserReceiverId).HasColumnName("user_receiver_id");
 
                 entity.Property(e => e.UserSenderId).HasColumnName("user_sender_id");
 
-                entity.HasOne(d => d.UserReciver)
-                    .WithMany(p => p.MessageUserRecivers)
-                    .HasForeignKey(d => d.UserReciverId)
+                entity.HasOne(d => d.UserReceiver)
+                    .WithMany(p => p.ReceivedMessages)
+                    .HasForeignKey(d => d.UserReceiverId)
                     .HasConstraintName("messages_user_reciver_id_fkey");
 
                 entity.HasOne(d => d.UserSender)
-                    .WithMany(p => p.MessageUserSenders)
+                    .WithMany(p => p.SentMessages)
                     .HasForeignKey(d => d.UserSenderId)
                     .HasConstraintName("messages_user_sender_id_fkey");
             });
@@ -167,9 +170,9 @@ namespace EFDataAccessLibrary
                     .HasColumnName("created_at")
                     .HasDefaultValueSql("now()");
 
-                entity.Property(e => e.Descriprion)
+                entity.Property(e => e.Description)
                     .HasMaxLength(10000)
-                    .HasColumnName("descriprion");
+                    .HasColumnName("description");
 
                 entity.Property(e => e.Gender)
                     .HasMaxLength(1)
@@ -204,6 +207,10 @@ namespace EFDataAccessLibrary
                     .WithMany(p => p.Pets)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("pets_user_id_fkey");
+
+                entity.HasMany(p => p.Statuses)
+                    .WithMany(s => s.Pets)
+                    .UsingEntity(j => j.ToTable("pet_status"));
             });
 
             modelBuilder.Entity<PetPhoto>(entity =>
@@ -227,7 +234,7 @@ namespace EFDataAccessLibrary
                     .HasConstraintName("pet_photos_pet_id_fkey");
             });
 
-            modelBuilder.Entity<PetsState>(entity =>
+            /*modelBuilder.Entity<PetState>(entity =>
             {
                 entity.HasNoKey();
 
@@ -246,34 +253,38 @@ namespace EFDataAccessLibrary
                     .WithMany()
                     .HasForeignKey(d => d.StateId)
                     .HasConstraintName("pets_states_state_id_fkey");
-            });
+            });*/
 
-            modelBuilder.Entity<State>(entity =>
+            modelBuilder.Entity<Status>(entity =>
             {
-                entity.ToTable("states");
+                entity.ToTable("statuses");
 
-                entity.Property(e => e.StateId).HasColumnName("state_id");
+                entity.Property(e => e.StatusId).HasColumnName("status_id");
 
                 entity.Property(e => e.Title)
                     .HasMaxLength(50)
                     .HasColumnName("title");
+
+                entity.HasMany(s => s.Pets)
+                    .WithMany(p => p.Statuses)
+                    .UsingEntity(j => j.ToTable("pet_status"));
             });
 
             modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("users");
 
-                entity.Property(e => e.UserId).HasColumnName("user_id");
+                entity.Property(u => u.UserId).HasColumnName("user_id");
 
-                entity.Property(e => e.AddressId).HasColumnName("address_id");
+                entity.Property(u => u.AddressId).HasColumnName("address_id");
 
-                entity.Property(e => e.BirthDate).HasColumnName("birth_date");
+                entity.Property(u => u.BirthDate).HasColumnName("birth_date");
 
-                entity.Property(e => e.CreatedAt)
+                entity.Property(u => u.CreatedAt)
                     .HasColumnName("created_at")
                     .HasDefaultValueSql("now()");
 
-                entity.Property(e => e.Email)
+                entity.Property(u => u.Email)
                     .HasMaxLength(255)
                     .HasColumnName("email");
 
@@ -302,9 +313,13 @@ namespace EFDataAccessLibrary
                 entity.Property(e => e.PhotoPath)
                     .HasMaxLength(1000)
                     .HasColumnName("photo_path");
+
+                entity.HasMany(u => u.Addresses)
+                    .WithMany(a => a.Users)
+                    .UsingEntity(j => j.ToTable("user_address"));
             });
 
-            modelBuilder.Entity<UserAddress>(entity =>
+            /*modelBuilder.Entity<UserAddress>(entity =>
             {
                 entity.HasKey(e => new { e.UserId, e.AddressId })
                     .HasName("user_address_pkey");
@@ -326,7 +341,7 @@ namespace EFDataAccessLibrary
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("user_address_user_id_fkey");
-            });
+            });*/
 
             OnModelCreatingPartial(modelBuilder);
         }

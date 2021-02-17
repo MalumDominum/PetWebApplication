@@ -1,0 +1,8 @@
+diff a/PetWebProject/bin/Debug/net5.0/appsettings.json b/PetWebProject/bin/Debug/net5.0/appsettings.json	(rejected hunks)
+@@ -0,5 +0,6 @@
+   },
+   "AllowedHosts": "*",
+   "ConnectionStrings": {
++    "Default": "Host=localhost;Port=5433;Database=petproject;User ID=postgres;Password=c788f928bd244746ae0ca3c79c3488a8;Integrated Security=true;Pooling=true"
+   }
+ }

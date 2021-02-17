@@ -1,13 +1,16 @@
-﻿#nullable disable
+﻿using System.ComponentModel.DataAnnotations;
+
+#nullable disable
 
 namespace EFDataAccessLibrary.Models
 {
     public partial class PetPhoto
     {
-        public int PhotoId { get; set; }
-        public int? PetId { get; set; }
-        public string Path { get; set; }
+        [Key] internal int PhotoId { get; }
+        [Required] public string Path { get; set; }
 
-        public virtual Pet Pet { get; set; }
+        internal int PetId { get; }
+
+        [Required] public virtual Pet Pet { get; set; }
     }
 }

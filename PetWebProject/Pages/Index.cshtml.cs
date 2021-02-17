@@ -23,18 +23,7 @@ namespace PetWebProject.Pages
 
         public void OnGet()
         {
-            LoadData();
-        }
-
-        private void LoadData()
-        {
-            if (_db.Countries.Any()) return;
-
-            _db.Add(new Country()
-            {
-                CountryName = "Украина"
-            });
-            _db.SaveChanges();
+            
         }
     }
 }

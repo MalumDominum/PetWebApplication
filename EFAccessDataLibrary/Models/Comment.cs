@@ -1,26 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
 namespace EFDataAccessLibrary.Models
 {
-    public partial class Comment
+    public class Comment
     {
-        public Comment()
-        {
-            InverseAnswerOnNavigation = new HashSet<Comment>();
-        }
+        [Key] internal int CommentId { get; }
+        internal int AuthorId { get; }
+        [Required] public User Author { get; set; }
+        [Required] public string Content { get; set; }
+        [Required] public DateTime PostDate { get; set; }
+        internal int PetId { get; }
+        [Required] public Pet Pet { get; set; }
 
-        public int CommentId { get; set; }
-        public string Content { get; set; }
-        public DateTime? PostDate { get; set; }
-        public int? AnswerOn { get; set; }
-        public int? MemberId { get; set; }
-        public int? PetId { get; set; }
+        internal int AnswerOnId { get; }
 
-        public virtual Comment AnswerOnNavigation { get; set; }
-        public virtual Pet Pet { get; set; }
-        public virtual ICollection<Comment> InverseAnswerOnNavigation { get; set; }
+        public Comment AnswerOn { get; set; }
+        public List<Comment> Answers { get; set; } = new List<Comment>();
     }
 }

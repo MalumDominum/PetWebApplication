@@ -1,27 +1,20 @@
 ﻿using System.Collections.Generic;
-using PetWebProject;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
 namespace EFDataAccessLibrary.Models
 {
-    public partial class Address
+    public class Address
     {
-        public Address()
-        {
-            Pets = new HashSet<Pet>();
-            UserAddresses = new HashSet<UserAddress>();
-        }
-
-        public int AddressId { get; set; }
-        public string StreetName { get; set; }
-        public int? HouseNumber { get; set; }
+        [Key] internal int AddressId { get; }
+        [Required] public string StreetName { get; set; }
+        [Required] public int HouseNumber { get; set; }
         public int? ApartmentNumber { get; set; }
         public string District { get; set; }
-        public int? CityId { get; set; }
-
-        public virtual City City { get; set; }
-        public virtual ICollection<Pet> Pets { get; set; }
-        public virtual ICollection<UserAddress> UserAddresses { get; set; }
+        internal int CityId { get; }
+        [Required] public City City { get; set; }
+        public List<Pet> Pets { get; set; } = new List<Pet>();
+        public List<User> Users { get; set; } = new List<User>();
     }
 }

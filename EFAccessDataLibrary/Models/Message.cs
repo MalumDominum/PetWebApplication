@@ -1,21 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using EFDataAccessLibrary.Models;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
-namespace PetWebProject
+namespace EFDataAccessLibrary.Models
 {
-    public partial class Message
+    public class Message
     {
-        public int MessageId { get; set; }
-        public int? UserSenderId { get; set; }
-        public int? UserReciverId { get; set; }
-        public string Content { get; set; }
-        public DateTime? CreatedAt { get; set; }
-        public DateTime? LastUpdateAt { get; set; }
+        [Key] internal int MessageId { get; }
+        [Required] public string Content { get; set; }
+        [Required] public DateTime CreatedAt { get; set; }
+        [Required] public DateTime LastUpdateAt { get; set; }
 
-        public virtual User UserReciver { get; set; }
-        public virtual User UserSender { get; set; }
+        internal int UserReceiverId { get; }
+        internal int UserSenderId { get; }
+
+        [Required] public User UserReceiver { get; set; }
+        [Required] public User UserSender { get; set; }
     }
 }
