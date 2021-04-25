@@ -49,3 +49,7 @@ C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\obj\Debug\net5.0\Pet
 C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\obj\Debug\net5.0\PetWebProject.genruntimeconfig.cache
 C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\bin\Debug\net5.0\Humanizer.dll
 C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\obj\Debug\net5.0\Razor\Pages\Pet.cshtml.g.cs
+C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\obj\Debug\net5.0\Razor\Pages\PetCatalog.cshtml.g.cs
+C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\bin\Debug\net5.0\package-lock.json
+C:\Users\mihai\Source\repos\PetWebApplication\PetWebProject\bin\Debug\net5.0\package.json

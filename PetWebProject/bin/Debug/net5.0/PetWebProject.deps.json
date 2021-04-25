@@ -27,6 +27,7 @@
         "dependencies": {
           "EFDataAccessLibrary": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.2",
+          "Microsoft.EntityFrameworkCore.Tools": "5.0.2",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "5.0.2",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -387,6 +388,11 @@
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.Tools/5.0.2": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "5.0.2"
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "5.0.0"
@@ -468,16 +474,8 @@
           "lib/netstandard2.1/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
         }
       },
-      "System.Collections.Immutable/5.0.0": {
-        "compile": {
-          "lib/netstandard2.0/System.Collections.Immutable.dll": {}
-        }
-      },
-      "System.ComponentModel.Annotations/5.0.0": {
-        "compile": {
-          "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
-        }
-      },
+      "System.Collections.Immutable/5.0.0": {},
+      "System.ComponentModel.Annotations/5.0.0": {},
       "System.Diagnostics.DiagnosticSource/5.0.1": {
         "runtime": {
           "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {
@@ -2243,6 +2241,13 @@
       "sha512": "sha512-1bisryvgZWcc+jkgksUH7cBkqOSXqyaC7HCAte0Yy+RHzt903KERsTJ447K+HNkW3bVt5GV/VAEcSN2ywqU9wg==",
       "path": "microsoft.entityframeworkcore.relational/5.0.2",
       "hashPath": "microsoft.entityframeworkcore.relational.5.0.2.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/5.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eJf7HbWRS6w7wJiOyjpkbkO1fTThElNzOru1d3+yWBLoEGv5v5eSN9aPXmHcXfyR9Uzx3fmjNIuMcyppDq5o/A==",
+      "path": "microsoft.entityframeworkcore.tools/5.0.2",
+      "hashPath": "microsoft.entityframeworkcore.tools.5.0.2.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
       "type": "package",

@@ -1,0 +1,41 @@
+﻿@page
+@model PetWebProject.Pages.PetModel
+@{
+    ViewData["Title"] = "Сторінка вихованця";
+}
+
+<a class="path-link" data-route="">Главная страница</a>
+<svg class="arrow-right" viewBox="0 0 478.448 478.448">
+    <path fill="#010002" d="M131.659 0l-31.165 32.035 213.31 207.197-213.31 207.141 31.156 32.075 246.304-239.216z"></path>
+</svg>
+<a class="path-link">Роут</a>
+<svg class="arrow-right" viewBox="0 0 478.448 478.448">
+    <path fill="#010002" d="M131.659 0l-31.165 32.035 213.31 207.197-213.31 207.141 31.156 32.075 246.304-239.216z"></path>
+</svg>
+<a class="path-link" >Роут</a>
+
+<div class="product-section">
+    <div class="vertical-photos-container">
+        <a class="product-photo" style="background-image: url(../wwwroot/assets/home-image-cat.jpg);"></a>
+    </div>
+    <img class="full-product-photo">
+    <div class="product-description-container">
+        <p class="sale-label">Скидка</p>
+        <h1 class="product-title">Название</h1>
+        <p class="product-price crossed-out">Старая стоимость</p>
+        <p class="product-price discounted">Стоимость со скидкой</p>
+        <p class="product-price">Стоимость</p>
+        <div class="in-stock">В наличии</div>
+        <div class="not-in-stock">Нет в наличии</div>
+        <div class="product-quantity-container">
+            <a class="quantity plus"></a>
+            <input class="quantity-input" value="1">
+            <a class="quantity minus"></a>
+        </div>
+        <button class="add-to-cart-button">В корзину</button>
+        <p class="product-code">Код: Продукта</p>
+        <p class="product-description">
+            Описание (Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi eget risus eu orci dictum consectetur vel at quam. Quisque accumsan augue risus. Sed at est non augue tincidunt maximus non quis magna. Nullam a nunc a justo volutpat vehicula nec quis justo. Donec blandit vel enim nec feugiat. Nunc eu.)
+        </p>
+    </div>
+</div>

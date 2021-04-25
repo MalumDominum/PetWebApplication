@@ -1,0 +1,78 @@
+﻿@page
+@model PetWebProject.Pages.PetCatalogModel
+@{
+    ViewData["Title"] = "Сторінка каталогу";
+}
+<div class="page-width">
+    <div class="categories">
+        <div class="shop-sidebar">
+            <div class="shop-sidebar-section">
+                <h5 class="categories-header">
+                    Цена
+                    <div class="quantity plus slidebar"></div>
+                </h5>
+                <form class="price-filter-form">
+                    <div class="price-filter-inner">
+                        <input class="price-filter-input" type="text" maxlength="20">
+                        <span class="price-filter-divider"> — </span>
+                        <input class="price-filter-input" type="text" maxlength="20">
+                        <a class="okay-button">Ок</a>
+                    </div>
+                </form>
+            </div>
+            <div class="shop-sidebar-section">
+                <h5 class="categories-header">
+                    Сортировать по
+                    <a class="quantity plus slidebar"></a>
+                </h5>
+                <form class="radio-form">
+                    <input type="radio" name="category" value="manga" class="radio">
+                    <label for="manga" class="radio-label">Цене</label>
+                    <svg class="arrow-right rotating-arrow sliding" viewBox="0 0 478.448 478.448">
+                        <path fill="#010002" d="M131.659 0l-31.165 32.035 213.31 207.197-213.31 207.141 31.156 32.075 246.304-239.216z"></path>
+                    </svg><br>
+                    <input type="radio" name="category" value="comics" class="radio">
+                    <label for="comics" class="radio-label">Скидкам</label><br>
+                    <input type="radio" name="category" value="artbook" class="radio">
+                    <label for="artbook" class="radio-label">Названию</label><br>
+                    <input type="radio" name="category" value="ranobe" class="radio">
+                    <label for="ranobe" class="radio-label">Наличии</label>
+                </form>
+            </div>
+            <div class="shop-sidebar-section">
+                <h5 class="categories-header">
+                    Литература
+                    <a class="quantity plus slidebar"></a>
+                </h5>
+                <form class="checkbox-form hidden">
+                    <input type="checkbox" name="category" value="manga" class="checkbox">
+                    <label for="manga" class="checkbox-label">Манга</label><br>
+                    <input type="checkbox" name="category" value="comics" class="checkbox">
+                    <label for="comics" class="checkbox-label">Комиксы</label><br>
+                    <input type="checkbox" name="category" value="artbook" class="checkbox">
+                    <label for="artbook" class="checkbox-label">Артбуки</label><br>
+                    <input type="checkbox" name="category" value="ranobe" class="checkbox">
+                    <label for="ranobe" class="checkbox-label">Ранобэ</label>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-image">
+        <a class="collection-item-photo-container">
+            <p class="sale-label in-collection">Скидка</p>
+            <img class="collection-item-photo">
+        </a>
+    </div>
+    <div class="collection-item-meta">
+        <div class="in-stock little">В наличии</div>
+        <div class="not-in-stock little">Нет в наличии</div>
+        <p class="collection-item-title">Имя продукта</p>
+        <div class="collection-item-price-container">
+            <p class="product-price crossed-out">Цена без скидки</p>
+            <p class="product-price discounted">Со скидкой</p>
+            <p class="product-price">Обычная цена</p>
+        </div>
+        <button class="add-to-cart-button little">В корзину</button>
+    </div>
+</div>

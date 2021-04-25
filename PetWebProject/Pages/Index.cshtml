@@ -1,10 +1,78 @@
 ﻿@page
-@model IndexModel
+@model PetWebProject.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Головна сторінка";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="home-about">
+    <div class="center">
+        <div class="home-about-div">
+            <div class="home-about-image home-about-image--list"></div>
+            <div class="home-about-div-container">
+                <h3 class="title">Проекти</h3>
+                <p>усі наші задуми</p>
+                <p>та плани</p>
+            </div>
+            <a href="" class="btn btn--border-white">Детальніше</a>
+        </div>
+        <div class="home-about-div">
+            <div class="home-about-image home-about-image--heart"></div>
+            <div class="home-about-div-container">
+                <h3 class="title">Пожертвування</h3>
+                <p>подаруйте кісточку</p>
+                <p>песику</p>
+            </div>
+            <a href="" class="btn btn--border-white">Детальніше</a>
+        </div>
+        <div class="home-about-div">
+            <div class="home-about-image home-about-image--bone"></div>
+            <div class="home-about-div-container">
+                <h3 class="title">Контакти</h3>
+                <p>потребуєте допомоги</p>
+                <p>чи поради?</p>
+            </div>
+            <a href="" class="btn btn--border-white">Детальніше</a>
+        </div>
+    </div>
+</section>
+<section class="home-images">
+    <div class="home-image" style="background-image: radial-gradient(rgba(255,255,255,0.5) 40%, rgba(255,255,255,0.2) 85%), url(assets/home-image-dog.jpg);">
+        <h3 class="home-image-title">Допомога тваринкам</h3>
+        <div class="home-image-hover">
+            <div class="home-image-hover-container">
+                <a class="home-image-hover-container-link">Тяжко хворим тваринам</a>
+                <div class="home-image-delim">або</div>
+                <a class="home-image-hover-container-link">Разова допомога тваринам</a>
+            </div>
+        </div>
+    </div>
+    <div class="home-image" style="background-image: radial-gradient(rgba(255,255,255,0.5) 40%, rgba(255,255,255,0.2) 85%), url(assets/home-image-husky.jpg);">
+        <h3 class="home-image-title">Опіка над тваринками</h3>
+        <div class="home-image-hover">
+            <div class="home-image-hover-container">
+                <a class="home-image-hover-container-link">Взяти під опіку собачку</a>
+                <div class="home-image-delim">або</div>
+                <a class="home-image-hover-container-link">Взяти під опіку котика</a>
+            </div>
+        </div>
+    </div>
+    <div class="home-image" style="background-image: radial-gradient(rgba(255,255,255,0.5) 40%, rgba(255,255,255,0.2) 85%), url(assets/home-image-cat.jpg);">
+        <h3 class="home-image-title">Влаштування тваринок</h3>
+        <div class="home-image-hover">
+            <div class="home-image-hover-container">
+                <a class="home-image-hover-container-link">Знайти господаря для собачки</a>
+                <div class="home-image-delim">або</div>
+                <a class="home-image-hover-container-link">Знайти господаря для котика</a>
+            </div>
+        </div>
+    </div>
+    <div class="home-image" style="background-image: radial-gradient(rgba(255,255,255,0.5) 40%, rgba(255,255,255,0.2) 85%), url(assets/home-image-ferret.jpg);">
+        <h3 class="home-image-title">Пошук тваринок</h3>
+        <div class="home-image-hover">
+            <div class="home-image-hover-container">
+                <a class="home-image-hover-container-link">Загублені</a>
+                <div class="home-image-delim">або</div>
+                <a class="home-image-hover-container-link">Знайдені</a>
+            </div>
+        </div>
+    </div>
+</section>

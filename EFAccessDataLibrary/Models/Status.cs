@@ -10,10 +10,11 @@ namespace EFDataAccessLibrary.Models
         internal int StatusId { get; }
         public string Title { get; set; }
         public List<Pet> Pets { get; set; } = new List<Pet>();
+		// TODO Maybe add Date
     }
 
     public enum Statuses
     {
-        UnderGuardianship, NotUnderGuardianship, Attached, NotAttached, Lost, Found, NeedHelp, NotNeedHelp
+        UnderGuardianship, NeedsGuardianship, Attached, NotAttached, Lost, Found, NeedsHelp, NotNeedsHelp, NeedOverexposure, OnOverexposure
     }
 }

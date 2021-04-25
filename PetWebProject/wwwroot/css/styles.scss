@@ -1,0 +1,189 @@
+﻿@import "./bootstrap.scss";
+
+$primary-color: #1f3f93;
+$secondary-color: #f9b000;
+$third-color: #eb6534;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /*display: block;
+    width: 100%;*/
+  padding-top: 70px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  font-weight: 100;
+}
+
+a:hover {
+  color: inherit;
+}
+.hidden {
+  display: none;
+}
+
+//-----------------HEADER---------------
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  padding: 0px 10px;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  width: 100vw;
+  background-color: $primary-color;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: auto;
+  margin: 0;
+}
+
+.logo {
+  width: 60px;
+  height: 59px;
+}
+
+.text-logo {
+  width: 320px;
+  height: 38px;
+}
+
+.links {
+  height: 65px;
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.link:hover {
+  color: #fff;
+}
+
+.parent-link {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-right: 0.5rem;
+  height: 100%;
+}
+
+.expanding-panel {
+  display: none;
+  background-color: $primary-color;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-around;
+  height: fit-content;
+  width: fit-content;
+  top: 100%;
+  padding: 0 15px 15px 15px;
+  box-shadow: 2px 22px 11px 0px #000 25%;
+}
+
+.parent-link:hover > .expanding-panel {
+  display: flex;
+}
+
+.bar {
+  display: flex;
+}
+
+.bar-container {
+  cursor: pointer;
+  padding: 15px;
+  border-left: 3px solid $third-color;
+  height: 65px;
+}
+
+.bar-container.search {
+  border-left: none;
+}
+
+.search-bar {
+  position: absolute;
+  top: 0;
+  left: -16.6rem;
+  z-index: -1;
+}
+
+.header-icon {
+  height: 30px;
+}
+
+.chevron-right {
+  width: 8px;
+  margin: 5px 0 0 -3px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.parent-link:hover > .chevron-right {
+  transform: rotate(90deg);
+}
+
+.bar-container {
+  display: block;
+  position: relative;
+}
+
+.icon-counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #1f3f93;
+  color: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: flex-start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  font-size: 9px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.avatar {
+  height: 45px;
+  width: 45px;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 3px solid $third-color;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.login-container > p {
+  margin: 10px;
+}
+
+//@import "./header.scss";

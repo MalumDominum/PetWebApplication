@@ -1,50 +1,126 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PetWebProject</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>@ViewData["Title"] - Hand To Paw</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="icon" href="~/assets/favicon.svg" type="image/icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">PetWebProject</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
+        <a href="/" class="container">
+            <img class="logo" src="~/assets/logo.svg" alt="Logotype"/>
+            <img class="text-logo" src="~/assets/text-logo.svg" alt="Hand To Paw" style="margin-left: 0.5rem"/>
+        </a>
+
+        <nav class="links">
+            <div class="parent-link">
+                <a class="link">Улюбленці</a>
+                <img class="chevron-right" src="~/assets/chevron-right.svg" alt="▼"/>
+                <div class="expanding-panel">
+                    <a class="expanding-panel-link link">Допомога</a>
+                    <a class="expanding-panel-link link">Влаштування</a>
+                    <a class="expanding-panel-link link">Пошук</a>
+                    <a class="expanding-panel-link link">Перетримка</a>
+                </div>
+            </div>
+            <a class="link">Проекти</a>
+            <a class="link">Волонтери</a>
+        </nav>
+
+        <div class="bar">
+            <a class="bar-container search">
+                <svg class="search-bar" width="1353" height="65" viewBox="0 0 1353 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.65406 65.3794C4.46999 69.4621 7.14156 73.131 10.5901 76.2746L32.6083 96.3461C36.0568 99.4897 40.0727 101.917 44.5602 103.58C48.8643 105.172 53.4042 105.984 58.0575 105.992L58.0575 106L1352.5 106L1352.5 2.28882e-05L58.0575 -0.000113164C53.4042 0.00784498 48.8556 0.819598 44.5602 2.41131C40.0815 4.06669 36.0568 6.50202 32.6083 9.64564L10.5813 29.7251C7.13278 32.8687 4.47006 36.5296 2.64539 40.6203C0.890571 44.5678 5.00668e-06 48.7301 4.63306e-06 53.0038C0.00873471 57.2696 0.899236 61.4319 2.65406 65.3794Z" fill="#F9B000"/>
+                </svg>
+                <img class="header-icon" src="~/assets/search.svg" alt="Search"/>
+            </a>
+            <a href="/" class="bar-container">
+                <img class="header-icon" src="~/assets/heart.svg" alt="Likes" title="Імпонуючі улюбленці"/>
+            </a>
+            <a href="/" class="bar-container">
+                <img class="header-icon" src="~/assets/chat.svg" alt="Chats" title="Чати"/>
+            </a>
+            <a href="/" class="bar-container">
+                <img class="header-icon" src="~/assets/paw.svg" alt="Pets" title="Ваші улюбленці"/>
+                <div class="icon-counter">3</div>
+            </a>
+            <div class="login-container">
+                <img class="avatar" src="~/assets/avatar.svg" alt="Avatar"/>
+                <p>Георгий Новиков</p>
+                <img class="chevron-right" src="~/assets/chevron-right-flame.svg" alt="▼"/>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="footer-socials">
+            <p>Ми в соціальних мережах</p>
+            <a href="">
+                <img src="assets/facebook-logotype.svg" alt="Facebook logo">
+            </a>
+            <a href="">
+                <img src="assets/telegram-logotype.svg" alt="telegram logo">
+            </a>
+            <a href="">
+                <img src="assets/vk-logotype.svg" alt="Vk logo">
+            </a>
+            <a href="">
+                <img src="assets/twitter-logotype.svg" alt="Twitter logo">
+            </a>
+        </div>
+        <div class="hr"></div>
+        <nav class="footer-nav">
+            <div class="footer-nav-header-title">
+                <a>Про проект</a>
+            </div>
+            <div class="footer-nav-col">
+                <div class="footer-nav-col-container">
+                    <h5 class="footer-nav-title">Допомога</h5>
+                    <p class="footer-nav-item">
+                        <a href="" class="footer-nav-link">- Тяжко хворим тваринам</a>
+                    </p>
+                    <p class="footer-nav-item">
+                        <a href="" class="footer-nav-link">- Разова допомога тваринам</a>
+                    </p>
+                    <h5 class="footer-nav-title">Опіка</h5>
+                    <p class="footer-nav-item">
+                        <a href="" class="footer-nav-link">- Взяти під опіку собачку</a>
+                    </p>
+                    <p class="footer-nav-item">
+                        <a href="" class="footer-nav-link">- Взяти під опіку котика</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-nav-col">
+                <div class="footer-nav-col-container">
+                    <h5 class="footer-nav-title">Влаштування</h5>
+                    <p class="footer-nav-item">
+                        <a href="" class="footer-nav-link">- Знайти господаря для собачки</a>
+                    </p>
+                    <p class="footer-nav-item">
+                        <a href="" class="footer-nav-link">- Знайти господаря для котика</a>
+                    </p>
+                    <h5 class="footer-nav-title">Пошук</h5>
+                    <p class="footer-nav-item">
+                        <a href="" class="footer-nav-link">- Загублені</a>
+                    </p>
+                    <p class="footer-nav-item">
+                        <a href="" class="footer-nav-link">- Знайдені</a>
+                    </p>
                 </div>
             </div>
         </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - PetWebProject - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
