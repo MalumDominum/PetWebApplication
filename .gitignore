@@ -1,16 +1,16 @@
 # dependencies
-node_modules/
+**/node_modules
 .pnp
 .pnp.js
 
 # testing
-coverage/
+**/coverage
 
 # production
-build/
+**/build
 
 #bootstrap
-wwwroot/lib/
+**/wwwroot/lib
 
 # misc
 .DS_Store
